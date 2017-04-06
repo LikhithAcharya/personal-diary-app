@@ -1,27 +1,17 @@
-<%= form_for(page) do |f| %>
-  <% if page.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(page.errors.count, "error") %> prohibited this page from being saved:</h2>
+<%= render "partials/errors" , obj: @page %>
 
-      <ul>
-      <% page.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
+  <%= form_for(@page, :html => {class: "form-horizontal", role:"form"}) do |f| %>
   <div class="field">
     <%= f.label :title %>
-    <%= f.text_area :title %>
+    <%= f.text_field :title, class: 'form-control', placeholder: "How was your day?",autofocus: true %>
   </div>
 
   <div class="field">
     <%= f.label :description %>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, rows: 10, class: 'form-control',placeholder: "Wats up buddy!" %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Capture the moments!!"  %>
   </div>
 <% end %>

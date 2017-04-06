@@ -1,32 +1,22 @@
-<%= form_for(user) do |f| %>
-  <% if user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+<%= render "partials/errors" , obj: @user %>
 
-      <ul>
-      <% user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
+  <%= form_for(@user, :html => {class: "form-horizontal", role:"form"}) do |f| %>
   <div class="field">
     <%= f.label :username %>
-    <%= f.text_field :username %>
+    <%= f.text_field :username, class: 'form-control', placeholder: "User name",autofocus: true %>
   </div>
 
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.email_field :email %>
-  </div>
+ <div>
+  <%= f.label :email %>
+  <%= f.email_field :email, class: 'form-control', placeholder: "email_id",autofocus: true %>
+</div>
 
   <div class="field">
     <%= f.label :password %>
-    <%= f.password_field :password %>
+    <%= f.password_field :password,  class: 'form-control',placeholder: "Password" %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Create new account!"  %>
   </div>
 <% end %>

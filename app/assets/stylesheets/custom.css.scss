@@ -53,6 +53,31 @@
 
 
 
+.article-actions {
+  border-top:   1px solid #eaeaea ;
+  padding-top: 5px;
+}
+
+.article-title {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.article-body{
+  border-top: 1px solid #eaeaea;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.article-meta-details {
+  border-top: 1px solid #eaeaea;
+  margin-top: 15px;
+}
+
+.listing {
+  list-style: none;
+  padding-left: 0;
+}
 
 
 
@@ -178,4 +203,510 @@
   }
   #social-em:hover {
       color: #f39c12;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  * {
+      margin: 0;
+      padding: 0;
+  }
+  html {
+    /*  background-color: #000; */
+  }
+  .container {
+      margin: 30px auto;
+      width: 90%;
+  }
+
+  /* general styles */
+  .menu, .menu ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+  }
+  .menu {
+      height: 58px;
+  }
+  .menu li {
+      background: -moz-linear-gradient(#292929, #252525);
+      background: -ms-linear-gradient(#292929, #252525);
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #292929), color-stop(100%, #252525));
+      background: -webkit-linear-gradient(#292929, #252525);
+      background: -o-linear-gradient(#292929, #252525);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#292929', endColorstr='#252525');
+      -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#292929', endColorstr='#252525')";
+      background: linear-gradient(#292929, #252525);
+
+      border-bottom: 2px solid #181818;
+      border-top: 2px solid #303030;
+      min-width: 160px;
+  }
+  .menu > li {
+      display: block;
+      float: left;
+      position: relative;
+  }
+  .menu > li:first-child {
+      border-radius: 5px 0 0;
+  }
+  .menu a {
+      border-left: 3px solid rgba(0, 0, 0, 0);
+      color: #808080;
+      display: block;
+      font-family: 'Lucida Console';
+      font-size: 18px;
+      line-height: 54px;
+      padding: 0 25px;
+      text-decoration: none;
+      text-transform: uppercase;
+  }
+
+  /* onhover styles */
+  .menu li:hover {
+      background-color: #1c1c1c;
+      background: -moz-linear-gradient(#1c1c1c, #1b1b1b);
+      background: -ms-linear-gradient(#1c1c1c, #1b1b1b);
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #1c1c1c), color-stop(100%, #1b1b1b));
+      background: -webkit-linear-gradient(#1c1c1c, #1b1b1b);
+      background: -o-linear-gradient(#1c1c1c, #1b1b1b);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1c1c1c', endColorstr='#1b1b1b');
+      -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#1c1c1c', endColorstr='#1b1b1b')";
+      background: linear-gradient(#1c1c1c, #1b1b1b);
+
+      border-bottom: 2px solid #222222;
+      border-top: 2px solid #1B1B1B;
+  }
+  .menu li:hover > a {
+      border-radius: 5px 0 0 0;
+      border-left: 3px solid #C4302B;
+      color: #C4302B;
+  }
+
+  /* submenu styles */
+  .submenu {
+      left: 0;
+      max-height: 0;
+      position: absolute;
+      top: 100%;
+      z-index: 0;
+
+      -webkit-perspective: 400px;
+      -moz-perspective: 400px;
+      -ms-perspective: 400px;
+      -o-perspective: 400px;
+      perspective: 400px;
+  }
+  .submenu li {
+      opacity: 0;
+
+      -webkit-transform: rotateY(90deg);
+      -moz-transform: rotateY(90deg);
+      -ms-transform: rotateY(90deg);
+      -o-transform: rotateY(90deg);
+      transform: rotateY(90deg);
+
+      -webkit-transition: opacity .4s, -webkit-transform .5s;
+      -moz-transition: opacity .4s, -moz-transform .5s;
+      -ms-transition: opacity .4s, -ms-transform .5s;
+      -o-transition: opacity .4s, -o-transform .5s;
+      transition: opacity .4s, transform .5s;
+  }
+  .menu .submenu li:hover a {
+      border-left: 3px solid #454545;
+      border-radius: 0;
+      color: #ffffff;
+  }
+  .menu > li:hover .submenu, .menu > li:focus .submenu {
+      max-height: 2000px;
+      z-index: 10;
+  }
+  .menu > li:hover .submenu li, .menu > li:focus .submenu li {
+      opacity: 1;
+
+      -webkit-transform: none;
+      -moz-transform: none;
+      -ms-transform: none;
+      -o-transform: none;
+      transform: none;
+  }
+
+  /* CSS3 delays for transition effects */
+  .menu li:hover .submenu li:nth-child(1) {
+      -webkit-transition-delay: 0s;
+      -moz-transition-delay: 0s;
+      -ms-transition-delay: 0s;
+      -o-transition-delay: 0s;
+      transition-delay: 0s;
+  }
+  .menu li:hover .submenu li:nth-child(2) {
+      -webkit-transition-delay: 50ms;
+      -moz-transition-delay: 50ms;
+      -ms-transition-delay: 50ms;
+      -o-transition-delay: 50ms;
+      transition-delay: 50ms;
+  }
+  .menu li:hover .submenu li:nth-child(3) {
+      -webkit-transition-delay: 100ms;
+      -moz-transition-delay: 100ms;
+      -ms-transition-delay: 100ms;
+      -o-transition-delay: 100ms;
+      transition-delay: 100ms;
+  }
+  .menu li:hover .submenu li:nth-child(4) {
+      -webkit-transition-delay: 150ms;
+      -moz-transition-delay: 150ms;
+      -ms-transition-delay: 150ms;
+      -o-transition-delay: 150ms;
+      transition-delay: 150ms;
+  }
+  .menu li:hover .submenu li:nth-child(5) {
+      -webkit-transition-delay: 200ms;
+      -moz-transition-delay: 200ms;
+      -ms-transition-delay: 200ms;
+      -o-transition-delay: 200ms;
+      transition-delay: 200ms;
+  }
+  .menu li:hover .submenu li:nth-child(6) {
+      -webkit-transition-delay: 250ms;
+      -moz-transition-delay: 250ms;
+      -ms-transition-delay: 250ms;
+      -o-transition-delay: 250ms;
+      transition-delay: 250ms;
+  }
+  .menu li:hover .submenu li:nth-child(7) {
+      -webkit-transition-delay: 300ms;
+      -moz-transition-delay: 300ms;
+      -ms-transition-delay: 300ms;
+      -o-transition-delay: 300ms;
+      transition-delay: 300ms;
+  }
+  .menu li:hover .submenu li:nth-child(8) {
+      -webkit-transition-delay: 350ms;
+      -moz-transition-delay: 350ms;
+      -ms-transition-delay: 350ms;
+      -o-transition-delay: 350ms;
+      transition-delay: 350ms;
+  }
+
+  .submenu li:nth-child(1) {
+      -webkit-transition-delay: 350ms;
+      -moz-transition-delay: 350ms;
+      -ms-transition-delay: 350ms;
+      -o-transition-delay: 350ms;
+      transition-delay: 350ms;
+  }
+  .submenu li:nth-child(2) {
+      -webkit-transition-delay: 300ms;
+      -moz-transition-delay: 300ms;
+      -ms-transition-delay: 300ms;
+      -o-transition-delay: 300ms;
+      transition-delay: 300ms;
+  }
+  .submenu li:nth-child(3) {
+      -webkit-transition-delay: 250ms;
+      -moz-transition-delay: 250ms;
+      -ms-transition-delay: 250ms;
+      -o-transition-delay: 250ms;
+      transition-delay: 250ms;
+  }
+  .submenu li:nth-child(4) {
+      -webkit-transition-delay: 200ms;
+      -moz-transition-delay: 200ms;
+      -ms-transition-delay: 200ms;
+      -o-transition-delay: 200ms;
+      transition-delay: 200ms;
+  }
+  .submenu li:nth-child(5) {
+      -webkit-transition-delay: 150ms;
+      -moz-transition-delay: 150ms;
+      -ms-transition-delay: 150ms;
+      -o-transition-delay: 150ms;
+      transition-delay: 150ms;
+  }
+  .submenu li:nth-child(6) {
+      -webkit-transition-delay: 100ms;
+      -moz-transition-delay: 100ms;
+      -ms-transition-delay: 100ms;
+      -o-transition-delay: 100ms;
+      transition-delay: 100ms;
+  }
+  .submenu li:nth-child(7) {
+      -webkit-transition-delay: 50ms;
+      -moz-transition-delay: 50ms;
+      -ms-transition-delay: 50ms;
+      -o-transition-delay: 50ms;
+      transition-delay: 50ms;
+  }
+  .submenu li:nth-child(8) {
+      -webkit-transition-delay: 0s;
+      -moz-transition-delay: 0s;
+      -ms-transition-delay: 0s;
+      -o-transition-delay: 0s;
+      transition-delay: 0s;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  @import url(http://fonts.googleapis.com/css?family=Sniglet|Raleway:900);
+
+
+  body, html{
+  	height: 100%;
+  	padding: 0;
+  	margin: 0;
+  	font-family: 'Sniglet', cursive;
+  }
+  h1{
+  	font-weight: normal;
+  	font-size: 4em;
+  	font-family: 'Raleway', sans-serif;
+  	margin: 0 auto;
+  	margin-top: 30px;
+  	width: 500px;
+  	color: #F90;
+  	text-align: center;
+
+  }
+
+  /* Animation webkit */
+  @-webkit-keyframes myfirst
+  {
+  	0% {margin-left: -235px}
+  	90% {margin-left: 100%;}
+  	100% {margin-left: 100%;}
+  }
+
+  /* Animation */
+  @keyframes myfirst
+  {
+  	0% {margin-left: -235px}
+  	70% {margin-left: 100%;}
+  	100% {margin-left: 100%;}
+  }
+
+  .fish{
+  	background-image: url('http://www.geertjanhendriks.nl/codepen/form/fish.png');
+  	width: 235px;
+  	height: 104px;
+  	margin-left: -235px;
+  	position: absolute;
+  	animation: myfirst 24s;
+  	-webkit-animation: myfirst 24s;
+  	animation-iteration-count: infinite;
+  	-webkit-animation-iteration-count: infinite;
+  	animation-timing-function: linear;
+  	-webkit-animation-timing-function: linear;
+  }
+
+  #fish{
+  	top: 120px;
+  }
+
+  #fish2{
+  	top: 260px;
+  	animation-delay: 12s;
+  	-webkit-animation-delay: 12s;
+  }
+
+
+  header{
+  	height: 160px;
+  	background: url('http://www.geertjanhendriks.nl/codepen/form/golf.png') repeat-x bottom;
+  }
+
+  #form{
+  	height: 100%;
+  	background-color: #98d4f3;
+  	overflow: hidden;
+  	position: relative;
+
+  }
+  form{
+  	margin: 0 auto;
+  	width: 500px;
+  	padding-top: 40px;
+  	color: white;
+  	position: relative;
+
+
+  }
+  label, input, textarea{
+  	display: block;
+  }
+  input, textarea{
+  	width: 500px;
+  	border: none;
+  	border-radius: 20px;
+  	outline: none;
+  	padding: 10px;
+  	font-family: 'Sniglet', cursive;
+  	font-size: 1em;
+  	color: #676767;
+  	transition: border 0.5s;
+  	-webkit-transition: border 0.5s;
+  	-moz-transition: border 0.5s;
+  	-o-transition: border 0.5s;
+  	border: solid 3px #98d4f3;
+  	-webkit-box-sizing:border-box;
+  	-moz-box-sizing:border-box;
+  	box-sizing:border-box;
+
+  }
+  input:focus, textarea:focus{
+  	border: solid 3px #77bde0;
+  }
+
+  textarea{
+  	height: 100px;
+  	resize: none;
+  	overflow: auto;
+  }
+  input[type="submit"]{
+  	background-color: #F90;
+  	color: white;
+  	height: 50px;
+  	cursor: pointer;
+  	margin-top: 30px;
+  	font-size: 1.29em;
+  	font-family: 'Sniglet', cursive;
+  	-webkit-transition: background-color 0.5s;
+  	-moz-transition: background-color 0.5s;
+  	-o-transition: background-color 0.5s;
+  	transition: background-color 0.5s;
+  }
+  input[type="submit"]:hover{
+  	background-color: #e58f0e;
+
+  }
+  label{
+  	font-size: 1.5em;
+  	margin-top: 20px;
+  	padding-left: 20px;
+  }
+  .formgroup, .formgroup-active, .formgroup-error{
+  	background-repeat: no-repeat;
+  	background-position: right bottom;
+  	background-size: 10.5%;
+  	transition: background-image 0.7s;
+  	-webkit-transition: background-image 0.7s;
+  	-moz-transition: background-image 0.7s;
+  	-o-transition: background-image 0.7s;
+  	width: 566px;
+  	padding-top: 2px;
+  }
+
+  .formgroup{
+  	background-image: url('http://www.geertjanhendriks.nl/codepen/form/pixel.gif');
+  }
+  .formgroup-active{
+  	background-image: url('http://www.geertjanhendriks.nl/codepen/form/octo.png');
+  }
+  .formgroup-error{
+  	background-image: url('http://www.geertjanhendriks.nl/codepen/form/octo-error.png');
+  	color: red;
   }

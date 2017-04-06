@@ -1,14 +1,7 @@
-<p id="notice"><%= notice %></p>
+<h1 class="center">Welcome to <%= @user.username %>'s page</h1>
+<div class="row">
 
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
+</div>
+<h4 class="center"><%= @user.username %>'s pages.</h4>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= render 'user', obj: @user%>
