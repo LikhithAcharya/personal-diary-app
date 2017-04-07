@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Diary app</title>
+    <title>My Personal Diary</title>
 
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href='http://fonts.googleapis.com/css?family=Leckerli+One' rel='stylesheet' type='text/css'>
+
 
   </head>
 
   <body>
-    <%= render 'partials/navbar' %> 
+    <%= render 'partials/navbar' %>
+    <%= render 'partials/messages' %>
+
     <%= yield %>
+
 
   </body>
 </html>

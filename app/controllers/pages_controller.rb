@@ -27,6 +27,7 @@ class PagesController < ApplicationController
   # POST /pages.json
   def create
   @page = Page.new(page_params)
+  @page.user = current_user
   if @page.save
     flash[:success] = "You created your today's memory!"
     redirect_to page_path(@page)
@@ -39,7 +40,7 @@ end
   # PATCH/PUT /pages/1.json
   def update
   if @page.update(page_params)
-    flash[:success] = "You hav updated the current page!!"
+    flash[:success] = "You have updated the current page!!"
     redirect_to page_path(@page)
   else
     render 'edit'
@@ -51,7 +52,7 @@ end
   def destroy
     @page.destroy
     flash[:danger] = "You deleted today's memory!!"
-    redirect_to page_path
+    redirect_to pages_path
   end
 
   private
@@ -66,7 +67,7 @@ end
     end
 
     def require_same_user
-    if current_user != @page.user
+    if current_user != @page.user 
       flash[:danger] = "You can only edit or delete your own articles"
       redirect_to root_path
     end

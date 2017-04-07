@@ -12,6 +12,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+      @user_pages = @user.pages.paginate(page: params[:page], per_page: 5)
   end
 
   # GET /users/new
@@ -29,8 +30,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      flash[:success] = "Account created successfully!!"
-      redirect_to user_path(@user)
+      flash[:success] = "Add stuffs in your personal diary #{@user.username}"
+      redirect_to new_page_path
     else
       render 'new'
     end
@@ -40,8 +41,8 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1.json
   def update
     if @user.update(user_params)
-      flash[:success] = "Account updated successfully!!"
-      redirect_to user_path(@user)
+      flash[:success] = "Account was updated successfully!!"
+      redirect_to pages_path
     else
       render 'edit'
     end
@@ -50,9 +51,10 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
+    @user = User.find(params[:id])
     @user.destroy
     flash[:danger] = "User was deleted successfully!!"
-    redirect_to user_path
+    redirect_to users_path
   end
 
   private

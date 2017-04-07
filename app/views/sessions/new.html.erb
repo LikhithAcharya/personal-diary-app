@@ -1,10 +1,9 @@
-<h1>Hello, welcome to login page</h1>
 
+<h1 class="pad">Hello, welcome to login page</h1>
+</br>
+<%= render 'partials/messages' %>
 <%= form_for(:session, :html => {class: "form-horizontal",role:"form"} , url: login_path) do |f| %>
 
-  <%= f.label :username %>
-  <%= f.text_field :username, class: 'form-control', placeholder: "User name",autofocus: true %>
-</div>
 
 <div>
 <%= f.label :email %>
@@ -20,3 +19,6 @@
   <%= f.submit  "Log in", class:"btn btn-primary btn-lg" %>
 </div>
 <% end %>
+
+
+<%= render 'partials/footer' %>

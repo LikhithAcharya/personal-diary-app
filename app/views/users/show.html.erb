@@ -1,7 +1,16 @@
-<h1 class="center">Welcome to <%= @user.username %>'s page</h1>
-<div class="row">
+<h1 class="center pad users">Welcome to <%= @user.username %>'s page</h1>
 
+
+<div class="center">
+   <%= will_paginate @user_pages %>
 </div>
-<h4 class="center"><%= @user.username %>'s pages.</h4>
 
-<%= render 'user', obj: @user%>
+</br>
+
+<%= render 'user', obj: @user_pages %>
+
+</br>
+
+<div class="center">
+   <%= will_paginate @user_pages %>
+</div>

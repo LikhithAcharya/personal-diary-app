@@ -1,31 +1,93 @@
-<div class="jumbotron size">
-  <h1 class="display-3">Do not let the memories fade away!</h1>
-  <p class="lead center">Memories are a movie you play over in your head without the background music and creative fictional twists.</p>
-  <p class="lead center ">
-    <a class="btn btn-primary btn-lg" href="#" role="button">Start capturing by signing in</a>
-  </p>
-  <hr class="my-4 ">
-  <p align="center">You will never know the true value of a moment until it becomes a memory. Make the most of the moment cos you never know what you have until it’s gone.</p>
+<%= render 'partials/navbar' %>
+<!-- Full Page Image Background Carousel Header -->
+<header id="myCarousel" class="carousel slide">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+        <li data-target="#myCarousel" data-slide-to="4"></li>
+        <li data-target="#myCarousel" data-slide-to="5"></li>
+        <li data-target="#myCarousel" data-slide-to="6"></li>
+    </ol>
 
-</div>
+    <!-- Wrapper for Slides -->
+    <div class="carousel-inner">
+        <div class="item active">
+            <!-- Set the first background image using inline CSS below. -->
+            <div class="fill" style="background-image: asset-url('http://placehold.it/1900x1080&text=Slide Three');"></div>
+            <div class="carousel-caption">
+                <h2>Caption 1</h2>
+            </div>
+        </div>
+        <div class="item">
+            <!-- Set the second background image using inline CSS below. -->
+            <div class="fill" style="background-image: asset-url('http://placehold.it/1900x1080&text=Slide Three');"></div>
+            <div class="carousel-caption">
+                <h2>Caption 2</h2>
+            </div>
+        </div>
+        <div class="item">
+            <!-- Set the third background image using inline CSS below. -->
+            <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Three');"></div>
+            <div class="carousel-caption">
+                <h2>Caption 3</h2>
+            </div>
+        </div>
+        <div class="item">
+            <!-- Set the third background image using inline CSS below. -->
+            <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Four');"></div>
+            <div class="carousel-caption">
+                <h2>Caption 4</h2>
+            </div>
+        </div>
+        <div class="item">
+            <!-- Set the third background image using inline CSS below. -->
+            <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Five');"></div>
+            <div class="carousel-caption">
+                <h2>Caption </h2>
+            </div>
+        </div>
+        <div class="item">
+            <!-- Set the third background image using inline CSS below. -->
+            <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Six');"></div>
+            <div class="carousel-caption">
+                <h2>Caption </h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="icon-prev"></span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="icon-next"></span>
+    </a>
+
+</header>
+
+<!-- Page Content -->
+
+<!-- /.container -->
+
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+
+<!-- Script to Activate the Carousel -->
+<script>
+$('.carousel').carousel({
+    interval: 5000 //changes the speed
+})
+</script>
 
 
 
 
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-<!-- // -->
-<div class="container">
 
-  <footer id="foot"> &copy; Copyright 1997, Likhith Acharya </footer>
-
-    <hr />
-        <div class="text-center center-block">
-            <br />
-                <a href="https://www.facebook.com"><i class="fa fa-facebook-square fa-3x social"></i></a>
-              <a href="https://twitter.com"><i class="fa fa-twitter-square fa-3x social"></i></a>
-              <a href="https://plus.google.com"><i class="fa fa-google-plus-square fa-3x social"></i></a>
-              <a href="mailto:likhithacharya277@gmail.com"><i class="fa fa-envelope-square fa-3x social"></i></a>
-
-</div>
     <hr />
 </div>
