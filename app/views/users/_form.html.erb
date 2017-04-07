@@ -17,6 +17,6 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Create new account!"  %>
+    <%= f.submit(@user.new_record? ? "Create new account": "Update existing account", class:"btn btn-primary btn-lg") %>
   </div>
 <% end %>
