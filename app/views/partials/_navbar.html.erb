@@ -16,21 +16,26 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
 
-                        <li><%= link_to "My Pages", pages_path %></li>
+                <% if logged_in? && current_user.admin? %>
+                         <div class="article-actions">
+                           <li><%= link_to "Users" , users_path  %></li>
+                           <li><%= link_to "Pages" , pages_path  %></li>
+                        </div>
+                  <% end %>
 
 
-
-                         <li><%= link_to "Users" , users_path%></li>
-               
 
                   <li><%= link_to "Home" , root_path, class: "nav-icon" %></li>
+                  <li><%= link_to "Log in" , login_path, class: "nav-icon" %></li>
+                  <li><%= link_to "sign up" , signup_path, class: "nav-icon" %></li>
 
                      <% if logged_in? %>
                             <li><%= link_to "Logout" , logout_path, class: "nav-icon",  method: :delete%></li>
-                   <% else%>
-                            <li><%= link_to "Log in" , login_path, class: "nav-icon" %></li>
-                            <li><%= link_to "sign up" , signup_path,class: "nav-icon" %></li>
-                   <% end %>
+                            <li><%= link_to "Write some today's stuffs!" , new_page_path, class: "nav-icon" %></li>
+                            
+                     <% end %>
+
+
             </ul>
         </div>
         <!-- /.navbar-collapse -->
