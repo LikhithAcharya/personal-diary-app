@@ -1,12 +1,12 @@
 class PagesController < ApplicationController
-  before_action :set_page, only: [:show, :edit, :update, :destroy]
-  before_action :require_user, except: [:index, :show]
- before_action :require_same_user, only: [:edit, :update, :destroy]
+  before_action :set_page, only: [:edit, :update, :show, :destroy]
+   before_action :require_user, except: [:index, :show]
+   before_action :require_same_user, only: [:edit, :update, :destroy]
 
   # GET /pages
   # GET /pages.json
   def index
-    @pages = Page.paginate(page: params[:page], per_page: 5)
+    @pages = Page.paginate(page:  params[:page], per_page: 5)
   end
 
   # GET /pages/1
@@ -66,10 +66,13 @@ end
       params.require(:page).permit(:title, :description)
     end
 
-    def require_same_user
-    if current_user != @page.user 
-      flash[:danger] = "You can only edit or delete your own articles"
-      redirect_to root_path
-    end
-  end
+        def require_same_user
+        if current_user != @page.user and !current_user.admin? 
+          flash[:danger]= "You can only edit your own account"
+          redirect_to root_path
+        end
+      end
+
+
+
 end

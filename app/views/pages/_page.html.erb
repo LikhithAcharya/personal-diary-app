@@ -15,8 +15,8 @@
      </div>
           <% if logged_in? && (current_user == page.user || current_user.admin?) %>
          <div class="article-actions">
-           <%= link_to "Edit", edit_page_path(page), class: "btn btn-xs btn-primary" %>
-            <%= link_to "delete",page_path(page), :method => :delete, :data => {confirm: "Are you sure?"},class: "btn btn-xs btn-danger" %>
+           <%= link_to "Edit", edit_page_path(@page), class: "btn btn-xs btn-primary" %>
+            <%= link_to "delete",page_path(@page), :method => :delete, :data => {confirm: "Are you sure?"},class: "btn btn-xs btn-danger" %>
             <% end %>
         </div>
 
