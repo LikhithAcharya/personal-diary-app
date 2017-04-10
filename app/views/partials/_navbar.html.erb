@@ -15,31 +15,28 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-
+<% if logged_in? && current_user.admin? %>
               <li><%= link_to "Users" , users_path  %></li>
-              <li><%= link_to "Pages" , pages_path  %></li>
-
-
-
-
+              <li><%= link_to "My Pages" , pages_path  %></li>
+<% end %>
                      <% if logged_in?  %>
                             <li><%= link_to "Home" , root_path, class: "nav-icon" %></li>
+
+                            <li> <%= link_to "List of my pages",  user_path(current_user)%> </li>
                             <li><%= link_to "Write some today's stuffs!" , new_page_path, class: "nav-icon" %></li>
                             <li><%= link_to "Logout" , logout_path, class: "nav-icon",  method: :delete%></li>
+                            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Your Profile<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Edit your profile", edit_user_path(current_user) %> </li>
 
+              </ul>
+            </li>
                         <% else %>
                             <li><%= link_to "Home" , root_path, class: "nav-icon" %></li>
                             <li><%= link_to "Log in" , login_path, class: "nav-icon" %></li>
                             <li><%= link_to "sign up" , signup_path, class: "nav-icon" %></li>
                      <% end %>
-
-
-
-
-
-
-
-
 
 
             </ul>

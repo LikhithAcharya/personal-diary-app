@@ -6,7 +6,7 @@ class PagesController < ApplicationController
   # GET /pages
   # GET /pages.json
   def index
-    @pages = Page.paginate(page:  params[:page], per_page: 5)
+    @pages =  Page.paginate(page: params[:page], per_page: 5)
   end
 
   # GET /pages/1
@@ -41,7 +41,7 @@ end
   def update
   if @page.update(page_params)
     flash[:success] = "You have updated the current page!!"
-    redirect_to page_path(@page)
+    redirect_to user_path(current_user)
   else
     render 'edit'
   end
@@ -51,8 +51,8 @@ end
   # DELETE /pages/1.json
   def destroy
     @page.destroy
-    flash[:danger] = "You deleted today's memory!!"
-    redirect_to pages_path
+    flash[:danger] = "You deleted that memory!!"
+    redirect_to user_path(current_user)
   end
 
   private
@@ -67,7 +67,7 @@ end
     end
 
         def require_same_user
-        if current_user != @page.user and !current_user.admin? 
+        if current_user != @page.user and !current_user.admin?
           flash[:danger]= "You can only edit your own account"
           redirect_to root_path
         end
