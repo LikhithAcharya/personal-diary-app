@@ -1,6 +1,7 @@
 
-<h1 class="center pad users">Welcome  <%= @user.username %> </h1>
+<h1 class="userpage">Welcome  <%= @user.username %> </h1>
 
+<%= render 'partials/messages' %> 
 </br>
 <div align="center">
    <%= will_paginate @user_pages %>
