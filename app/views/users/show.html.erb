@@ -2,14 +2,15 @@
 <h1 class="center pad users">Welcome  <%= @user.username %> </h1>
 
 </br>
-<div class="center">
+<div align="center">
    <%= will_paginate @user_pages %>
 </div>
 
 <%= render 'user', obj: @user_pages %>
 
-<div class="center">
+<div align="center">
    <%= will_paginate @user_pages %>
 </div>
+
 
 <%= render 'partials/footer' %>

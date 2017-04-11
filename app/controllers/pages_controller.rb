@@ -3,6 +3,7 @@ class PagesController < ApplicationController
    before_action :require_user, except: [:index, :show]
    before_action :require_same_user, only: [:edit, :update, :destroy]
 
+
   # GET /pages
   # GET /pages.json
   def index
@@ -41,7 +42,7 @@ end
   def update
   if @page.update(page_params)
     flash[:success] = "You have updated the current page!!"
-    redirect_to user_path(current_user)
+    redirect_to page_path(@page)
   else
     render 'edit'
   end

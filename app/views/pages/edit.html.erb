@@ -1,8 +1,11 @@
-<h1>Edit your captured memory</h1>
+<h1 class="pad users">Edit your captured memory</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @page %> |
+<div class="center">
+  <%= link_to "View this page", @page, class: "btn btn-xs btn-primary center"  %>
+</div>
+
 
 
 <%= render 'partials/footer' %>

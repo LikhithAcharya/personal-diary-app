@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :require_same_user, only: [:edit, :update, :destroy]
-  before_action :require_admin, only: [:destroy]
+  before_action :require_admin, only: [:destroy] 
 
   # GET /users
   # GET /users.json
@@ -80,6 +80,7 @@ class UsersController < ApplicationController
       redirect_to root_path
      end
      end
+
 
   end
 

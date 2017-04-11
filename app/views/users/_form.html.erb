@@ -1,15 +1,18 @@
 <%= render "partials/errors" , obj: @user %>
 
   <%= form_for(@user, :html => {class: "form-horizontal", role:"form"}) do |f| %>
+  <%= render 'partials/messages' %> 
   <div class="field">
     <%= f.label :username %>
     <%= f.text_field :username, class: 'form-control', placeholder: "User name",autofocus: true %>
   </div>
 
+ <% if !logged_in? %>
  <div>
   <%= f.label :email %>
   <%= f.email_field :email, class: 'form-control', placeholder: "email_id",autofocus: true %>
 </div>
+ <% end %>
 
   <div class="field">
     <%= f.label :password %>
